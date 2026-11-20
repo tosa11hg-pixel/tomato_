@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Томатный гайд — как правильно выращивать помидоры</title>
+  <meta name="description" content="Пошаговый гайд по выращиванию помидоров: посев на рассаду, почва, полив, подкормка, формирование куста, вредители и частые ошибки.">
+  <meta name="theme-color" content="#e8402f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Иконки -->
+  <svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-tomato" viewBox="0 0 64 64">
+      <path d="M32 17c-3-6-10-9-16-7 3 1 5 3 6 6-6 2-11 7-13 14-3 11 6 22 23 22s26-11 23-22c-2-7-7-12-13-14 1-3 3-5 6-6-6-2-13 1-16 7Z" fill="currentColor"/>
+      <path d="M32 17c0-4 1-8 4-11M32 17c-2-4-5-7-9-9M32 17c3-3 7-4 11-4" fill="none" stroke="#2f6b39" stroke-width="3.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24">
+      <path d="M20 4C10 4 4 8 4 15c0 3 2 5 5 5 7 0 11-6 11-16Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M4 20c3-5 7-9 13-12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24">
+      <path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M3 10h18M8 3v4m8-4v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24">
+      <path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24">
+      <rect x="7" y="8" width="10" height="12" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M9 8 7 4m8 4 2-4M7 12H4m3 4H4m13-4h3m-3 4h3M12 8V4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m5 13 4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M12 20V5m0 0-6 6m6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap header__inner">
+      <a class="brand" href="#top" aria-label="Томатный гайд — наверх">
+        <svg class="brand__icon" aria-hidden="true"><use href="#i-tomato"/></svg>
+        <span>томатный<span class="brand__accent"> гайд</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <a href="#plan">План сезона</a>
+        <a href="#seedlings">Рассада</a>
+        <a href="#care">Уход</a>
+        <a href="#trouble">Проблемы</a>
+        <a href="#checklist" class="nav__cta">Чек-лист</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero" id="top">
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="eyebrow__dot"></span> Гайд для грядки, теплицы и балкона</p>
+          <h1>Помидоры, которые<br><em>действительно</em> растут</h1>
+          <p class="lead">Никакой магии: правильная почва, свет, полив и пара простых приёмов. Разложили сезон по шагам — от семечка до корзины спелых плодов.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#plan">Смотреть план <span aria-hidden="true">→</span></a>
+            <a class="btn btn--light" href="#checklist">Открыть чек-лист</a>
+          </div>
+          <dl class="hero__stats">
+            <div><dt>Свет рассаде</dt><dd>12–14 ч</dd></div>
+            <div><dt>Тепло почвы</dt><dd>от 15 °C</dd></div>
+            <div><dt>До урожая</dt><dd>90–120 дней</dd></div>
+          </dl>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="hero__halo"></div>
+          <svg class="hero__tomato" viewBox="0 0 420 420">
+            <defs>
+              <radialGradient id="tomatoBody" cx="35%" cy="28%" r="75%">
+                <stop offset="0" stop-color="#ff8b6d"/>
+                <stop offset="0.45" stop-color="#ef4b35"/>
+                <stop offset="1" stop-color="#b51f1a"/>
+              </radialGradient>
+              <linearGradient id="tomatoBody2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff6a4a"/>
+                <stop offset="1" stop-color="#c6261e"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="215" cy="378" rx="118" ry="18" fill="#1d3d24" opacity=".14"/>
+            <path d="M210 96c-18-40-62-58-100-46 16 8 28 20 33 36-36 10-66 38-78 78-20 66 46 132 145 132s165-66 145-132c-12-40-42-68-78-78 5-16 17-28 33-36-38-12-82 6-100 46Z" fill="url(#tomatoBody)"/>
+            <path d="M338 150c-19-48-62-54-90-40 33 2 58 21 72 52 5 10 12 8 18-12Z" fill="url(#tomatoBody2)" opacity=".55"/>
+            <path d="M210 96c0-22 5-44 18-62M210 96c-12-23-29-41-51-52M210 96c17-20 39-30 63-31" fill="none" stroke="#2f6b39" stroke-width="13" stroke-linecap="round"/>
+            <path d="M212 96c-30-18-64-12-80 2 20 12 49 13 80-2Zm0 0c30-18 64-12 80 2-20 12-49 13-80-2Z" fill="#3e8a45"/>
+            <ellipse cx="150" cy="180" rx="26" ry="14" fill="#fff" opacity=".26" transform="rotate(-28 150 180)"/>
+            <circle cx="140" cy="236" r="6" fill="#fff" opacity=".18"/>
+            <circle cx="178" cy="264" r="4" fill="#fff" opacity=".16"/>
+          </svg>
+          <span class="hero__leaf hero__leaf--1"></span>
+          <span class="hero__leaf hero__leaf--2"></span>
+          <span class="hero__leaf hero__leaf--3"></span>
+          <div class="hero__badge"><svg aria-hidden="true"><use href="#i-sun"/></svg> Солнце + забота = урожай</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПЛАН СЕЗОНА -->
+    <section class="section section--cream" id="plan">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">01 / Календарь</p>
+          <h2>План сезона без паники</h2>
+          <p class="section__lead">Сроки ориентировочные для средней полосы. Сдвигайте их на 1–2 недели в зависимости от вашего климата и погоды.</p>
+        </div>
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <div class="timeline__date"><svg aria-hidden="true"><use href="#i-calendar"/></svg> Фев — Мар</div>
+            <h3>Посев на рассаду</h3>
+            <p>Семена на глубину 0,5–1 см, земля прогрета до 24–26 °C. Всходы появятся через 5–8 дней — сразу дайте им свет.</p>
+          </li>
+          <li class="timeline__item reveal">
+            <div class="timeline__date"><svg aria-hidden="true"><use href="#i-leaf"/></svg> Апр — Май</div>
+            <h3>Пикировка и закаливание</h3>
+            <p>При 2–3 настоящих листах пересадите глубже, до семядолей. За 7–10 дней до высадки привыкайте к улице.</p>
+          </li>
+          <li class="timeline__item reveal">
+            <div class="timeline__date"><svg aria-hidden="true"><use href="#i-shield"/></svg> Май — Июн</div>
+            <h3>Высадка в грунт</h3>
+            <p>Когда почва прогреется хотя бы до 15 °C, а ночные заморозки останутся позади. Сажайте глубоко, между кустами 40–70 см.</p>
+          </li>
+          <li class="timeline__item reveal">
+            <div class="timeline__date"><svg aria-hidden="true"><use href="#i-drop"/></svg> Июн — Авг</div>
+            <h3>Уход и формирование</h3>
+            <p>Полив под корень, мульча, пасынкование и подкормки. В жару — притенение и проветривание теплицы.</p>
+          </li>
+          <li class="timeline__item reveal">
+            <div class="timeline__date"><svg aria-hidden="true"><use href="#i-tomato"/></svg> Авг — Сен</div>
+            <h3>Сбор и финал</h3>
+            <p>Снимайте спелые плоды ножницами, а не руками. За 30–40 дней до холодов прищипните верхушки — силы уйдут в томаты.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- РАССАДА -->
+    <section class="section" id="seedlings">
+      <div class="wrap seedlings">
+        <div class="seedlings__art reveal" aria-hidden="true">
+          <div class="pot-scene">
+            <div class="pot-scene__sun"></div>
+            <svg viewBox="0 0 420 360">
+              <defs>
+                <linearGradient id="potGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#d98b5a"/><stop offset="1" stop-color="#a95832"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="210" cy="330" rx="150" ry="14" fill="#20462a" opacity=".12"/>
+              <path d="M210 190c-12-42-46-72-88-84 12 24 34 43 62 55-32-10-58-6-76 6 26 10 58 10 88-2-16 24-14 48 2 66 16-18 18-42 2-66 30 12 62 12 88 2-18-12-44-16-76-6 28-12 50-31 62-55-42 12-76 42-88 84Z" fill="#3e8a45"/>
+              <path d="M210 190v96" stroke="#2f6b39" stroke-width="9" stroke-linecap="round"/>
+              <path d="M148 226h124l-14 88c-2 12-12 20-24 20h-48c-12 0-22-8-24-20l-14-88Z" fill="url(#potGrad)"/>
+              <rect x="140" y="216" width="140" height="22" rx="8" fill="#e8a070"/>
+              <circle cx="184" cy="96" r="10" fill="#ff6a4a"/><circle cx="238" cy="112" r="8" fill="#ff8b6d"/>
+            </svg>
+          </div>
+        </div>
+        <div class="seedlings__copy">
+          <div class="section__head reveal">
+            <p class="kicker">02 / Рассада</p>
+            <h2>Сильная рассада — половина урожая</h2>
+            <p class="section__lead">Томаты любят свет и прохладу после всходов. Главная ошибка — тепло и темнота: кустики вытягиваются и болеют.</p>
+          </div>
+          <ol class="rules">
+            <li class="rule reveal"><span class="rule__num">1</span><div><h3>Свет — 12–14 часов в сутки</h3><p>Сразу после всходов досвечивайте фитолампой. Свет должен быть сбоку и сверху, иначе рассада тянется в одну сторону.</p></div></li>
+            <li class="rule reveal"><span class="rule__num">2</span><div><h3>Температура: тепло всходам, прохлада росткам</h3><p>До появления всходов 24–26 °C, после — 18–20 °C днём и 14–16 °C ночью. Не ставьте горшки вплотную к батарее.</p></div></li>
+            <li class="rule reveal"><span class="rule__num">3</span><div><h3>Поливайте по краю стаканчика</h3><p>Вода под корень, без застоя. Земля должна просыхать сверху на 1–2 см между поливами — это защищает от «чёрной ножки».</p></div></li>
+            <li class="rule reveal"><span class="rule__num">4</span><div><h3>Пикируйте при 2–3 листах</h3><p>Переваливайте в горшок побольше, заглубляя стебель до семядольных листиков: дополнительные корни дают больше силы.</p></div></li>
+            <li class="rule reveal"><span class="rule__num">5</span><div><h3>Закаляйте 7–10 дней</h3><p>Сначала 15 минут в тени, потом постепенно увеличивайте до целого дня. Перед высадкой кустик должен пережить ночь при +8…+10 °C.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- УХОД -->
+    <section class="section section--green" id="care">
+      <div class="wrap">
+        <div class="section__head section__head--light reveal">
+          <p class="kicker">03 / Уход</p>
+          <h2>Полив, подкормка и форма куста</h2>
+          <p class="section__lead">Три привычки, которые отличают щедрый куст от «красивого, но пустого».</p>
+        </div>
+        <div class="care-grid">
+          <article class="care-card reveal">
+            <span class="care-card__icon"><svg aria-hidden="true"><use href="#i-drop"/></svg></span>
+            <h3>Полив: редко, но глубоко</h3>
+            <p>1–2 раза в неделю, утром, строго под корень. Молодому кусту 2–4 литра, взрослому в жару — до 8–10. После полива рыхлите или обновляйте мульчу слоем 5–8 см.</p>
+            <p class="care-card__tip"><strong> Важно:</strong> не мочите листья в жару и не допускайте «качалки»: сухо — залив — сухо. Именно скачки влаги дают трещины и вершинную гниль.</p>
+          </article>
+          <article class="care-card reveal">
+            <span class="care-card__icon"><svg aria-hidden="true"><use href="#i-leaf"/></svg></span>
+            <h3>Подкормка: сначала азот, потом калий</h3>
+            <p>До цветения достаточно слабого азотного решения. С начала завязывания — фосфор и калий (суперфосфат, калийная соль, зола по норме). Избыток азота = пышная ботва без плодов.</p>
+            <p class="care-card__tip"><strong> Важно:</strong> удобряйте только по влажной земле и не чаще 1 раза в 10–14 дней. Лучше недодать, чем перекормить.</p>
+          </article>
+          <article class="care-card reveal">
+            <span class="care-card__icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3>Формирование: меньше пасынков</h3>
+            <p>У индетерминантных сортов боковые побеги в пазухах листьев выщипывайте, когда они длиной 3–5 см. Оставьте 1–2 стебля, подвяжите к шпалере. Нижние листья под первым соцветием удаляйте.</p>
+            <p class="care-card__tip"><strong> Важно:</strong> не трогайте куст после дождя и в сильную жару — раны заживают хуже. За 30–40 дней до конца сезона прищипните макушку.</p>
+          </article>
+        </div>
+        <div class="callout reveal">
+          <svg class="callout__icon" aria-hidden="true"><use href="#i-sun"/></svg>
+          <div>
+            <h3>Секрет завязывания</h3>
+            <p>В теплице в жару и при сухом воздухе пыльца «не работает». Дважды в неделю в утренние часы слегка потряхивайте цветочные кисти или включите вентилятор. Днём держите температуру ниже 30 °C, а ночью — выше 15 °C.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРОБЛЕМЫ -->
+    <section class="section section--cream" id="trouble">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">04 / Тревожные сигналы</p>
+          <h2>Что пошло не так и что делать</h2>
+          <p class="section__lead">Нажмите на вопрос — развернём короткий разбор. Болезни проще предупредить, чем лечить.</p>
+        </div>
+        <div class="faq">
+          <details class="faq__item reveal">
+            <summary><span class="faq__badge faq__badge--red">Грибок</span> Бурые пятна на листьях и плодах</summary>
+            <div class="faq__body"><p>Скорее всего, фитофтороз. Сработайте сразу: удалите поражённые листья, усильте проветривание, не поливайте по листьям, мульчируйте почву и обработайте куст разрешённым фунгицидом строго по инструкции. Профилактика — устойчивые сорта, дренаж и отсутствие загущения.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary><span class="faq__badge faq__badge--yellow">Вредители</span> Мелкие мошки или клещи на обороте листа</summary>
+            <div class="faq__body"><p>Белокрылка и паутинный клещ обожают сухой воздух. Повысьте влажность, обмойте листья мыльным раствором, повесьте жёлтые клейкие ловушки. При сильном заражении применяйте безопасный для овощей инсектицид по этикетке, выдерживая срок ожидания.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary><span class="faq__badge faq__badge--brown">Плоды</span> Тёмное пятно на дне томата</summary>
+            <div class="faq__body"><p>Вершинная гниль — это не «нехватка кальция в земли», а сбой его поступления из-за неровного полива. Выровняйте влажность, добавьте мульчу, не перекармливайте азотом и калием одновременно. Поражённые плоды уберите.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary><span class="faq__badge faq__badge--green">Цветы</span> Много цветов, но завязи опадают</summary>
+            <div class="faq__body"><p>Проверьте температуру: выше +32 °C и ниже +15 °C пыльца бесплодна. Добавьте проветривание, притенение в полдень и аккуратное встряхивание кистей. Также помогут умеренный полив и отказ от избытка азота.</p></div>
+          </details>
+          <details class="faq__item reveal">
+            <summary><span class="faq__badge faq__badge--blue">Грунт</span> Куст растёт, но томаты мелкие и кислые</summary>
+            <div class="faq__body"><p>Часто виноваты загущённая посадка, дефицит калия и нехватка света. Разредите кусты, добавьте калийные подкормки и проверьте, не затеняют ли томаты высокие соседи. Кислый вкус часто уходит при полном вызревании на кусте и регулярном поливе.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ОШИБКИ -->
+    <section class="section" id="mistakes">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">05 / Ошибки</p>
+          <h2>Пять ошибок, которые крадут урожай</h2>
+        </div>
+        <div class="mistakes">
+          <div class="mistake reveal"><span class="mistake__mark">✕</span><div><h3>«Чем больше удобрений, тем лучше»</h3><p>Перекормленный куст идёт в ботву. Подкормки — по фазе роста и по влажной почве, а не «на всякий случай».</p></div></div>
+          <div class="mistake reveal"><span class="mistake__mark">✕</span><div><h3>«Полил чуть-чуть, но каждый день»</h3><p>Мелкие ежедневные поливы держат корни у поверхности. Лучше реже, но глубоко, с последующим рыхлением или мульчей.</p></div></div>
+          <div class="mistake reveal"><span class="mistake__mark">✕</span><div><h3>«Пусть всё растёт, жалко вырезать»</h3><p>Загущение = влажность, грибки и мелкие плоды. Пасынки и нижние листья удаляйте вовремя, куст должен проветриваться.</p></div></div>
+          <div class="mistake reveal"><span class="mistake__mark">✕</span><div><h3>«Посадил где попало»</h3><p>Томаты не любят тень и свежий навоз. Им нужно солнце 6–8 часов и рыхлая почва с pH около 6–6,8. Не сажайте после картошки и перцев.</p></div></div>
+          <div class="mistake reveal"><span class="mistake__mark">✕</span><div><h3>«Сорвал зелёным — дозреет на подоконнике»</h3><p>Дозревают только плоды, начавшие буреть. Зелёные томаты в тепле остаются жёсткими и кислыми — дайте им налиться на кусте.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЧЕК-ЛИСТ -->
+    <section class="section section--cream" id="checklist">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">06 / Самопроверка</p>
+          <h2>Чек-лист перед высадкой</h2>
+          <p class="section__lead">Отметьте, что уже сделано. Прогресс сохраняется в этом браузере.</p>
+        </div>
+        <div class="checklist reveal">
+          <div class="checklist__top">
+            <div class="checklist__progress"><div class="checklist__bar" id="progressBar"></div></div>
+            <span class="checklist__count" id="progressText">0 из 8</span>
+            <button class="checklist__reset" type="button" id="resetChecklist">Сбросить</button>
+          </div>
+          <ul class="checklist__items" id="checkItems">
+            <li><label><input type="checkbox" data-key="soil"><span class="checklist__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span>Почва рыхлая, дренированная, без свежего навоза</span></label></li>
+            <li><label><input type="checkbox" data-key="light"><span class="checklist__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span>Место солнечное минимум 6–8 часов в день</span></label></li>
+            <li><label><input type="checkbox" data-key="rotate"><span class="checklist__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span>Не сажаем после паслёновых 3–4 года</span></label></li>
+            <li><label><input type="checkbox" data-key="harden"><span class="checklist__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span>Рассада закалена 7–10 дней</span></label></li>
+            <li><label><input type="checkbox" data-key="warm"><span class="checklist__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span>Почва прогрелась до +15 °C, заморозков не ждём</span></label></li>
+            <li><label><input type="checkbox" data-key="space"><span class="checklist__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span>Соблюдены расстояния между кустами и рядками</span></label></li>
+            <li><label><input type="checkbox" data-key="support"><span class="checklist__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span>Колья или шпалера установлены заранее</span></label></li>
+            <li><label><input type="checkbox" data-key="mulch"><span class="checklist__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span>Мульча и система полива подготовлены</span></label></li>
+          </ul>
+          <p class="checklist__done" id="doneMessage" hidden>Отлично! Можно высаживать — урожай уже в пути 🍅</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ФИНАЛ -->
+    <section class="final">
+      <div class="wrap final__inner reveal">
+        <div>
+          <p class="kicker kicker--light">В итоге</p>
+          <h2>Хороший томат начинается с подготовки, а заканчивается терпением</h2>
+          <p>Соблюдайте ритм: свет рассаде, тепло земле, вода под корень, порядок в кусте — и куст ответит вам корзиной спелых плодов.</p>
+        </div>
+        <a class="btn btn--primary btn--big" href="#top">Начать сначала <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span><svg class="footer__icon" aria-hidden="true"><use href="#i-tomato"/></svg> Томатный гайд</span>
+      <span>Сделано с любовью к зелёным грядкам · 2026</span>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#top" aria-label="Наверх" id="toTop"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+</body>
+</html>
